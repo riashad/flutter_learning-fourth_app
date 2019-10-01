@@ -15,6 +15,7 @@ class PersonalBusinessCard extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
                 height: 20.0,
@@ -43,10 +44,12 @@ class PersonalBusinessCard extends StatelessWidget {
                   letterSpacing: 2.5,
                 ),
               ),
-              Divider(
-                color: Colors.grey.shade200,
-                height: 20.0,
-
+              SizedBox(
+                height: 50.0,
+                width: 180.0,
+                child: Divider(
+                  color: Colors.grey.shade200,
+                ),
               ),
               Card(
                 color: Colors.white,
@@ -84,31 +87,23 @@ class PersonalBusinessCard extends StatelessWidget {
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.email),
+                  child: ListTile(
+                    leading: IconButton(
+                      icon: Icon(Icons.email),
+                      color: Colors.teal.shade900,
+                      onPressed: (){
+                        print('Email Button Pressed');
+                      },
+                    ),
+                    title: Text(
+                      'hello@riashad.net',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
                         color: Colors.teal.shade900,
-                        onPressed: (){
-                          print('Email Button Pressed');
-                        },
+                        letterSpacing: 2.5,
                       ),
-                      SizedBox(
-                        width: 0.0,
-                      ),
-                      Text(
-                        'hello@riashad.net',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.teal.shade900,
-                          letterSpacing: 2.5,
-                        ),
-                      ),
-                    ],
+                    ) ,
                   ),
                 ),
               ),
@@ -131,3 +126,5 @@ class PersonalBusinessCard extends StatelessWidget {
     );
   }
 }
+
+
